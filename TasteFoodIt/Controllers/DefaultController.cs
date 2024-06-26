@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using TasteFoodIt.Context;
-using TasteFoodIt.Entities;
 
 namespace TasteFoodIt.Controllers
 {
@@ -69,7 +65,8 @@ namespace TasteFoodIt.Controllers
 
         public PartialViewResult PartialChef()
         {
-            return PartialView();
+            var values = context.Chefs.ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult PartialSecret()
@@ -77,6 +74,74 @@ namespace TasteFoodIt.Controllers
             return PartialView();
         }
 
-       
+        public PartialViewResult PartialBilgi()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult PartialFooter()
+        {
+
+            return PartialView();
+        }
+
+        public PartialViewResult PartialSocialMedia()
+        {
+            var values = context.SocialMedias.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialOpenDayHour()
+        {
+            var values = context.OpenDayHours.ToList();
+            return PartialView(values);
+        }
+
+        public ActionResult NavbarAbout()
+        {
+            return View();
+        }
+
+        public PartialViewResult PartialStatistic()
+        {
+            ViewBag.categoryCount = context.Categories.Count();
+            ViewBag.productCount = context.Products.Count();
+            ViewBag.chefCount = context.Chefs.Count();
+            ViewBag.testimonialCount = context.Testimonials.Count();
+            return PartialView();
+        }
+
+        public ActionResult NavbarChef()
+        {
+            return View();
+        }
+
+        public ActionResult NavbarMenu()
+        {
+            return View();
+        }
+
+        public ActionResult NavbarReservation()
+        {
+            return View();
+        }
+
+        public ActionResult NavbarContact()
+        {
+            return View();
+        }
+
+        public PartialViewResult PartialContactInformation()
+        {
+            var values = context.contactInformations.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialContactUs()
+        {
+            var values = context.Contacts.ToList();
+            return PartialView(values);
+        }
+
     }
 }
