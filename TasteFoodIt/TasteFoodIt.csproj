@@ -133,6 +133,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Admin.cs" />
@@ -4801,6 +4802,7 @@
     <Content Include="Views\Default\NavbarContact.cshtml" />
     <Content Include="Views\Default\PartialContactInformation.cshtml" />
     <Content Include="Views\Default\PartialContactUs.cshtml" />
+    <Content Include="Views\Product\ProductList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
