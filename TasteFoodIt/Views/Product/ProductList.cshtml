@@ -9,8 +9,8 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Ürün Listesi</h1>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="./">Ana Sayfa</a></li>
-            <li class="breadcrumb-item">Ürünler</li>
+            <li class="breadcrumb-item"><a href="/Default/Index/">Ana Sayfa</a></li>
+            <li class="breadcrumb-item"><a href="/Product/ProductList/">Ürünler</a></li>
             <li class="breadcrumb-item active" aria-current="page">Ürün İşlemleri</li>
         </ol>
     </div>
@@ -42,7 +42,7 @@
                                 <tr>
                                     <td>@count</td>
                                     <td>@item.ProductName</td>
-                                    <td>Kategori</td>
+                                    <td>@item.Category.CategoryName</td>
                                     <td>@item.Price</td>
                                     <td>@item.IsActive</td>                                    
                                     <td><a href="/Product/DeleteProduct/@item.ProductId" class="btn btn-danger">Ürünü Sil</a></td>

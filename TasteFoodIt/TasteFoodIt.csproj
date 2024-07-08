@@ -128,8 +128,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\TasteContext.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -141,6 +143,7 @@
     <Compile Include="Entities\Chef.cs" />
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="Entities\ContactInformation.cs" />
+    <Compile Include="Entities\Notification.cs" />
     <Compile Include="Entities\OpenDayHour.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Reservation.cs" />
@@ -164,6 +167,22 @@
     <Compile Include="Migrations\202406251527073_mig4.cs" />
     <Compile Include="Migrations\202406251527073_mig4.designer.cs">
       <DependentUpon>202406251527073_mig4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407022050276_mig5.cs" />
+    <Compile Include="Migrations\202407022050276_mig5.designer.cs">
+      <DependentUpon>202407022050276_mig5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407022117382_mig6.cs" />
+    <Compile Include="Migrations\202407022117382_mig6.designer.cs">
+      <DependentUpon>202407022117382_mig6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407062216409_mig7.cs" />
+    <Compile Include="Migrations\202407062216409_mig7.designer.cs">
+      <DependentUpon>202407062216409_mig7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407082336208_mig8.cs" />
+    <Compile Include="Migrations\202407082336208_mig8.designer.cs">
+      <DependentUpon>202407082336208_mig8.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -4803,6 +4822,12 @@
     <Content Include="Views\Default\PartialContactInformation.cshtml" />
     <Content Include="Views\Default\PartialContactUs.cshtml" />
     <Content Include="Views\Product\ProductList.cshtml" />
+    <Content Include="Views\Product\CreateProduct.cshtml" />
+    <Content Include="Views\Product\UpdateProduct.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\About\AboutList.cshtml" />
+    <Content Include="Views\About\CreateAbout.cshtml" />
+    <Content Include="Views\About\UpdateAbout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -4836,6 +4861,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202406251527073_mig4.resx">
       <DependentUpon>202406251527073_mig4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407022050276_mig5.resx">
+      <DependentUpon>202407022050276_mig5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407022117382_mig6.resx">
+      <DependentUpon>202407022117382_mig6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407062216409_mig7.resx">
+      <DependentUpon>202407062216409_mig7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407082336208_mig8.resx">
+      <DependentUpon>202407082336208_mig8.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
