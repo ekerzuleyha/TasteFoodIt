@@ -28,8 +28,10 @@ namespace TasteFoodIt.Controllers
 
         public PartialViewResult PartialNavbar()
         {
+            ViewBag.notificationIsReadByFalseCount = context.Notifications.Where(x=>x.IsRead==false).Count();
             //admin panelinde hepsi listelenecek ama bildirimlerde sadece okunmayanlar olacak.
             var values = context.Notifications.Where(x => x.IsRead == false).ToList();
+            ViewBag.m = values.Count();
             return PartialView(values);
         }
 
@@ -42,6 +44,14 @@ namespace TasteFoodIt.Controllers
         public PartialViewResult PartialScript()
         {
             return PartialView();
+        }
+
+        public ActionResult NotificationStatusChangeToTrue(int id)
+        {
+            var value = context.Notifications.Find(id);
+            value.IsRead = true;
+            context.SaveChanges();
+            return RedirectToAction("CategoryList", "Category");
         }
     }
 }
