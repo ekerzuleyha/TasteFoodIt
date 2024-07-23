@@ -12,6 +12,10 @@ namespace TasteFoodIt.Controllers
     {
         TasteContext context = new TasteContext();
 
+
+        [Authorize]
+        //nu attributun bulunduğu yerde eğer kullanıcı sisteme otantike(adminin giriş yapması) değilse bu listeyi göremez.
+        //yetki vermek için kullanlır. product listesine ulaşmak için sadece admin giriş yapsın.//
         public ActionResult ProductList()
         {
             var values = context.Products.ToList();

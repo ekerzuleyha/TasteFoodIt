@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div>
-                            <div class="small text-gray-500">@item.Date.ToShortDateString()</div>
+                            <div class="small text-gray-500">@(((DateTime)item.Date).ToString("MMMM,dd,yyyy"))</div>
                             <span class="font-weight-bold">@item.Description</span>
                         </div>
                     </a>
