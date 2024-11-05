@@ -11,7 +11,7 @@ namespace TasteFoodIt.Context
     //dbcontext : veritabanına yansıtacağımız tabloların olduğu sınıfı tutar 
     public class TasteContext:DbContext
     {
-        //tabloları property oluşturup yansıtıcaz. türü dbcontextten gelen db set olacak,dbset in içine veritabanına yansıtmak istediğimiz tabloları yazıcaz. istediğimiz tablo.tabloa isimleri ilk baş gelmiyor neden .çünkü farklı klasördeler.     bunu eklemek gerek >>>>> using TasteFoodIt.Entities; çoğul abouts sql deki tablomuzun ismi , about ise c# daki sınıfın ismi
+        //tabloları property oluşturup yansıtıcaz. türü dbcontextten gelen db set olacak,dbset in içine veritabanına yansıtmak istediğimiz tabloları yazıcaz. istediğimiz tablo.tabloa isimleri ilk baş gelmiyor neden .çünkü farklı klasördeler.     bunu eklemek gerek >>>>> using TasteFoodIt.Entities; çoğul abouts sql deki tablomuzun ismi , about ise c# daki sınıfın ismi ,tabloya baska bir isimde verilebilirama okuma açısından bu daha güzel.  
         public DbSet<About> Abouts { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -25,5 +25,6 @@ namespace TasteFoodIt.Context
         public DbSet<SocialMedia> SocialMedias{ get; set; }
         public DbSet<ContactInformation> contactInformations{ get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
     }
 }

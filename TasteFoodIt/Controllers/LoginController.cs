@@ -28,7 +28,7 @@ namespace TasteFoodIt.Controllers
             var values = context.Admins.FirstOrDefault(x => x.Username == p.Username && x.Password == p.Password);
             if (values != null )
             {
-                //çerez değeri oluşturup kullanıcının bilgilerini tutucaz. bizeen kullanıcı adı istiyor ,bizde diyoruz ki values dan gelen kullanıcı adı kullanıcı adı olarak atansız.,true diyerek bilgilerin kalıcı olarak kaydedilmesini
+                //çerez değeri oluşturup kullanıcının bilgilerini tutucaz. bizden kullanıcı adı istiyor ,bizde diyoruz ki values dan gelen kullanıcı adı kullanıcı adı olarak atansın,true diyerek bilgilerin kalıcı olarak kaydedilmesini
                 FormsAuthentication.SetAuthCookie(values.Username, true);
                 Session["a"] = values.Username;
                 return RedirectToAction("ProductList","Product");
