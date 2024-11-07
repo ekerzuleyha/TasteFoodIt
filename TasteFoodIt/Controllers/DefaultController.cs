@@ -26,6 +26,7 @@ namespace TasteFoodIt.Controllers
         public PartialViewResult PartialNavbarInfo()
         {
             //liste formatıyla tasıma yerine viewbaglerla veri taşıma işlemi yapıcaz.
+            //entityframework de select metodu sadece 1 tane sütun seçmek için kullanılır.YANİ ADRES TABLOSUNDAKİ TELEFONU SEÇ DİYORUZ.bu telefon numarasını da ya listeleyeceğiz ya da sadece tek değeri seçeceğiz.
 
             ViewBag.phone = context.Addresses.Select(x => x.Phone).FirstOrDefault();
             ViewBag.email = context.Addresses.Select(y => y.Email).FirstOrDefault();
