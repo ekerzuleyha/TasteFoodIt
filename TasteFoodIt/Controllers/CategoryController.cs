@@ -10,7 +10,7 @@ namespace TasteFoodIt.Controllers
 {
     public class CategoryController : Controller
     {
-
+        //kategorilerimizi admin layouta bağlı olan bir sayfaya cevireceğiz. bunun için
         TasteContext context = new TasteContext();
 
         public ActionResult CategoryList()
