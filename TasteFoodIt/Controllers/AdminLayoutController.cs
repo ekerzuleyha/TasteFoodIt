@@ -16,6 +16,8 @@ namespace TasteFoodIt.Controllers
             return View();
         }
 
+
+        //layoutun partialhead i. dinamik bir yapı olduğu için controllar içine oluşturduk.
         public PartialViewResult PartialHead()
         {
             return PartialView();
