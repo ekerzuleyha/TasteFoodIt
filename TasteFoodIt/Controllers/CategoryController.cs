@@ -56,5 +56,11 @@ namespace TasteFoodIt.Controllers
             context.SaveChanges();
             return RedirectToAction("CategoryList");
         }
+
+        public ActionResult CategoryProducts(int id)
+        {
+            var values = context.Products.Where(x=>x.CategoryId==id).ToList();
+            return View(values);
+        }
     }
 }

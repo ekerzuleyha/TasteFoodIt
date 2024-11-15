@@ -1,13 +1,12 @@
-﻿@model List<TasteFoodIt.Entities.Category>
+﻿@model List<TasteFoodIt.Entities.Product>
 @{
-    ViewBag.Title = "CategoryList";
+    ViewBag.Title = "CategoryProducts";
     Layout = "~/Views/AdminLayout/Index.cshtml";
-  
 }
 
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Kategori Listesi</h1>
+        <h1 class="h3 mb-0 text-gray-800">Kategoriye Ait Ürünler Listesi</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/Default/Index/">Ana Sayfa</a></li>
             <li class="breadcrumb-item">Kategoriler</li>
@@ -26,11 +25,12 @@
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
-                                <th>Kategori Id</th>
-                                <th>Kategori Adı</th>
-                                <th>Kategoriye Ait Ürünler</th>
-                                <th>Sil</th>
-                                <th>Güncelle</th>
+                               
+                                
+                                <th>Ürünler</th>
+                                <th>Ürün Görseli</th>
+
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -38,17 +38,15 @@
                             {
 
                                 <tr>
-                                    <td>@item.CategoryId</td>
-                                    <td>@item.CategoryName</td>
-                                    <td><a href="/Category/CategoryProducts/@item.CategoryId" class="btn btn-warning">Kategoriye Ait Ürünler</a></td>
-                                    <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Kategoriyi Sil</a></td>
-                                    <td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-success">Güncelle</a></td>
+                                                           
+                                    <td>@item.ProductName</td>
+                                    <td><img src="@item.ImageUrl" width="75px" height="75px" border="0" alt="ürün resmi"></td>
                                 </tr>
                             }
                         </tbody>
                     </table>
-                    <br />
-                    <a href="/Category/CreateCategory/" class="btn btn-primary">Yeni Kategori Girişi</a>
+                    
+                    
                 </div>
                 <div class="card-footer"></div>
             </div>
@@ -56,4 +54,6 @@
     </div>
     <!--Row-->
 </div>
+
+
 

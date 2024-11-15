@@ -4954,6 +4954,7 @@
     <Content Include="Templates\login-form-19\scss\bootstrap\_variables.scss" />
     <Content Include="Templates\login-form-19\scss\style.scss" />
     <Content Include="Views\Slider\SliderList.cshtml" />
+    <Content Include="Views\Category\CategoryProducts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
