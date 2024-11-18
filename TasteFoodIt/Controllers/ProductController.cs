@@ -32,6 +32,12 @@ namespace TasteFoodIt.Controllers
                                                Value = x.CategoryId.ToString()
                                            }
                                           ).ToList();
+            values.Add(new SelectListItem
+            {
+                Text="Kategori Seçiniz...",
+                Value="0", Selected=true
+            });
+
             ViewBag.v = values;
             return View();
         }

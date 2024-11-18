@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "CategoryList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
-  
+    int count = 0;
 }
 
 <div class="container-fluid" id="container-wrapper">
@@ -36,9 +36,10 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-
+                                count++;
                                 <tr>
-                                    <td>@item.CategoryId</td>
+                                    @*<td>@item.CategoryId</td>*@
+                                    <td>@count</td>
                                     <td>@item.CategoryName</td>
                                     <td><a href="/Category/CategoryProducts/@item.CategoryId" class="btn btn-warning">Kategoriye Ait Ürünler</a></td>
                                     <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Kategoriyi Sil</a></td>
