@@ -14,6 +14,7 @@ namespace TasteFoodIt.Controllers
 
         public ActionResult AboutList()
         {
+            
             var values = context.Abouts.ToList();
             return View(values);
         }
@@ -21,6 +22,7 @@ namespace TasteFoodIt.Controllers
         [HttpGet]
         public ActionResult CreateAbout()
         {
+            ViewBag.aboutCount = context.Abouts.Count();
             return View();
         }
 

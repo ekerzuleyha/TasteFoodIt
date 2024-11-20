@@ -1,17 +1,16 @@
-﻿@model TasteFoodIt.Entities.About
+﻿@model TasteFoodIt.Entities.Slider
 @{
-    ViewBag.Title = "CreateAbout";
+    ViewBag.Title = "CreateSlider";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-@if (ViewBag.aboutCount < 1)
-{
+
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Kategori Ekleme Sayfası</h1>
+        <h1 class="h3 mb-0 text-gray-800">Referans Ekleme Sayfası</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/Default/Index/">Ana Sayfa</a></li>
-            <li class="breadcrumb-item">Hakkımda</li>
-            <li class="breadcrumb-item active" aria-current="page">Hakkımda İşlemleri</li>
+            <li class="breadcrumb-item">Slider</li>
+            <li class="breadcrumb-item active" aria-current="page">Slider İşlemleri</li>
         </ol>
     </div>
     <div class="row">
@@ -25,32 +24,23 @@
                     <form method="post">
                         <div class="form-group">
                             <label>Başlık</label>
-                            <input type="text" class="form-control" name="Title" id="exampleInputAbout" placeholder="Başlık Giriniz">
+                            <input type="text" class="form-control" name="Title">
                             <br />
 
                             <label>Açıklama</label>
-                            <input type="text" class="form-control" name="Description" id="exampleInputAbout" placeholder="Açıklama Giriniz">
+                            <input type="text" class="form-control" name="Description">
+                            <br />                         
+
+                            <label>Fotoğraf</label>
+                            @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
                             <br />
-
-
-
                         </div>
 
-                        <button type="submit" class="btn btn-primary" id="deneme" >Hakkımda Ekle</button>
+                        <button type="submit" class="btn btn-primary" id="deneme">Slider Ekle</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-}
 
-else
-{
-
-<div class="container">
-    <div class="alert alert-danger">Sadece 1 adet hakkımda girişi yapılabilir.</div>
-    <br />
-    <a href="/About/AboutList/" class="btn btn-primary">Geri Dön</a>
-</div>
-}

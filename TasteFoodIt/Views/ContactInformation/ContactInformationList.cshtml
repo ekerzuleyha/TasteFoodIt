@@ -1,0 +1,72 @@
+﻿@model TasteFoodIt.Entities.ContactInformation
+@{
+    ViewBag.Title = "ContactInformationList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 1;
+}
+
+<div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Adres Bilgileri</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Default/Index/">Ana Sayfa</a></li>
+            <li class="breadcrumb-item">Adres Bilgileri</li>
+            <li class="breadcrumb-item active" aria-current="page">Adres Bilgileri İşlemleri</li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 mb-4">
+            <!-- Simple Tables -->
+            <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Id</th>
+                                <th>Adres</th>
+                                <th>Telefon</th>
+                                <th>Email</th>
+                                <th>Website</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>@count</td>
+                                <td>@ViewBag.adres</td>
+                                <td>@ViewBag.telefon</td>
+                                <td>@ViewBag.email</td>
+                                <td>@ViewBag.website</td>
+
+                                <td><a href="/ContactInformation/DeleteContactInformation/@ViewBag.contactid" class="btn btn-danger">Sil</a></td>
+                                <td><a href="/ContactInformation/UpdateContactInformation/@ViewBag.contactid" class="btn btn-success">Güncelle</a></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                    <br />
+
+                    @if (ViewBag.count==0)
+                    {
+                        <a href="/ContactInformation/CreateContactInformation/" class="btn btn-primary">Yeni Adres Bilgisi Girişi</a>
+
+                    }
+                    else
+                    {
+                        <div class="alert alert-danger">Sadece 1 adet adres bilgisi girilir.</div>
+                    }
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+    </div>
+    <!--Row-->
+</div>
+

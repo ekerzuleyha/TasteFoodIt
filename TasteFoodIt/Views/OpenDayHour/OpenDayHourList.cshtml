@@ -1,17 +1,17 @@
-﻿@model List<TasteFoodIt.Entities.Category>
+﻿@model List<TasteFoodIt.Entities.OpenDayHour>
 @{
-    ViewBag.Title = "CategoryList";
+    ViewBag.Title = "OpenDayHourList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
 
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Kategori Listesi</h1>
+        <h1 class="h3 mb-0 text-gray-800">Çalışma Saatleri Sayfası</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/Default/Index/">Ana Sayfa</a></li>
-            <li class="breadcrumb-item">Kategoriler</li>
-            <li class="breadcrumb-item active" aria-current="page">Kategori İşlemleri</li>
+            <li class="breadcrumb-item">Çalışma Saatleri</li>
+            <li class="breadcrumb-item active" aria-current="page">Çalışma Saatleri İşlemleri</li>
         </ol>
     </div>
 
@@ -20,15 +20,15 @@
             <!-- Simple Tables -->
             <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                   
+
                 </div>
                 <div class="table-responsive">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
                                 <th>Id</th>
-                                <th>Kategori Adı</th>
-                                <th>Kategoriye Ait Ürünler</th>
+                                <th>Gün</th>
+                                <th>Çalışma Saatleri</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
                             </tr>
@@ -38,18 +38,18 @@
                             {
                                 count++;
                                 <tr>
-                                    @*<td>@item.CategoryId</td>*@
                                     <td>@count</td>
-                                    <td>@item.CategoryName</td>
-                                    <td><a href="/Category/CategoryProducts/@item.CategoryId" class="btn btn-warning">Kategoriye Ait Ürünler</a></td>
-                                    <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Kategoriyi Sil</a></td>
-                                    <td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-success">Güncelle</a></td>
+                                    <td>@item.DayName</td>
+                                    <td>@item.OpenHourRange</td>                                                          
+                                    <td><a href="/OpenDayHour/DeleteOpenDayHour/@item.OpenDayHourId" class="btn btn-danger">Sil</a></td>
+                                    <td><a href="/OpenDayHour/UpdateOpenDayHour/@item.OpenDayHourId" class="btn btn-success">Güncelle</a></td>
                                 </tr>
                             }
                         </tbody>
                     </table>
                     <br />
-                    <a href="/Category/CreateCategory/" class="btn btn-primary">Yeni Kategori Girişi</a>
+
+                    <a href="/OpenDayHour/CreateOpenDayHour/" class="btn btn-primary" id="deneme">Yeni Çalışma Saati Girişi</a>
                 </div>
                 <div class="card-footer"></div>
             </div>

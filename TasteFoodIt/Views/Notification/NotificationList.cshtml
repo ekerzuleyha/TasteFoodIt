@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "NotificationList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
 }
 
 <div class="container-fluid" id="container-wrapper">
@@ -27,6 +28,7 @@
                             <tr>
                                 <th>Bildirim Id</th>
                                 <th>Bildirim İçeriği</th>
+                                <th>Bildirim Tarihi</th>
                                 <th>Okunma Durumu</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
@@ -35,10 +37,12 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-
+                                count++;
                             <tr>
-                                <td>@item.NotificationId</td>
+                                @*<td>@item.NotificationId</td>*@
+                                <td>@count</td>
                                 <td>@item.Description</td>
+                                <td>@item.Date.ToShortDateString()  </td>
                                 @if (item.IsRead == true)
                                 {
                                     <td><a href="/Notification/NotificationIsReadChangeToFalse/@item.NotificationId" class="btn btn-dark">Okunmadı Olarak İşaretle</a></td>
@@ -55,7 +59,7 @@
                         </tbody>
                     </table>
                     <br />
-                    <a href="/Category/CreateCategory/" class="btn btn-primary">Yeni Kategori Girişi</a>
+                    <a href="/Notification/CreateNotification/" class="btn btn-primary">Yeni Bildirim Girişi</a>
                 </div>
                 <div class="card-footer"></div>
             </div>

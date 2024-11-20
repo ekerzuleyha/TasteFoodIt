@@ -1,17 +1,16 @@
-﻿@model TasteFoodIt.Entities.About
+﻿@model TasteFoodIt.Entities.Slider
 @{
-    ViewBag.Title = "CreateAbout";
+    ViewBag.Title = "UpdateSlider";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-@if (ViewBag.aboutCount < 1)
-{
+
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Kategori Ekleme Sayfası</h1>
+        <h1 class="h3 mb-0 text-gray-800">Slider Güncelleme Sayfası</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/Default/Index/">Ana Sayfa</a></li>
-            <li class="breadcrumb-item">Hakkımda</li>
-            <li class="breadcrumb-item active" aria-current="page">Hakkımda İşlemleri</li>
+            <li class="breadcrumb-item">Slider</li>
+            <li class="breadcrumb-item active" aria-current="page">Slider İşlemleri</li>
         </ol>
     </div>
     <div class="row">
@@ -19,38 +18,30 @@
             <!-- Form Basic -->
             <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Ekleme Paneli</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Güncelleme Paneli</h6>
                 </div>
                 <div class="card-body">
                     <form method="post">
                         <div class="form-group">
+                            @Html.HiddenFor(x => x.SliderId)
                             <label>Başlık</label>
-                            <input type="text" class="form-control" name="Title" id="exampleInputAbout" placeholder="Başlık Giriniz">
+                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
                             <br />
-
                             <label>Açıklama</label>
-                            <input type="text" class="form-control" name="Description" id="exampleInputAbout" placeholder="Açıklama Giriniz">
+                            @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
                             <br />
-
+                            <label>Fotoğraf</label>
+                            @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                            <br />
 
 
                         </div>
 
-                        <button type="submit" class="btn btn-primary" id="deneme" >Hakkımda Ekle</button>
+                        <button type="submit" class="btn btn-success">Slider Güncelle</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-}
 
-else
-{
-
-<div class="container">
-    <div class="alert alert-danger">Sadece 1 adet hakkımda girişi yapılabilir.</div>
-    <br />
-    <a href="/About/AboutList/" class="btn btn-primary">Geri Dön</a>
-</div>
-}

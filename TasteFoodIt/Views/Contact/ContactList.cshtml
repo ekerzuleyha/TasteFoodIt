@@ -1,17 +1,17 @@
-﻿@model List<TasteFoodIt.Entities.Category>
+﻿@model List<TasteFoodIt.Entities.Contact>
 @{
-    ViewBag.Title = "CategoryList";
+    ViewBag.Title = "ContactList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
 
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Kategori Listesi</h1>
+        <h1 class="h3 mb-0 text-gray-800">Mesaj Listesi</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/Default/Index/">Ana Sayfa</a></li>
-            <li class="breadcrumb-item">Kategoriler</li>
-            <li class="breadcrumb-item active" aria-current="page">Kategori İşlemleri</li>
+            <li class="breadcrumb-item"><a href="/Product/ProductList/">Mesajlar</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Mesaj İşlemleri</li>
         </ol>
     </div>
 
@@ -20,17 +20,20 @@
             <!-- Simple Tables -->
             <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                   
+
                 </div>
                 <div class="table-responsive">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
                                 <th>Id</th>
-                                <th>Kategori Adı</th>
-                                <th>Kategoriye Ait Ürünler</th>
+                                <th>İsim Soyisim</th>
+                                <th>Email</th>
+                                <th>Konu</th>
+                                <th>Mesaj</th>
+                                <th>Gönderme Tarihi</th>
                                 <th>Sil</th>
-                                <th>Güncelle</th>
+                                <th>Mesaj İçeriği</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,18 +41,20 @@
                             {
                                 count++;
                                 <tr>
-                                    @*<td>@item.CategoryId</td>*@
                                     <td>@count</td>
-                                    <td>@item.CategoryName</td>
-                                    <td><a href="/Category/CategoryProducts/@item.CategoryId" class="btn btn-warning">Kategoriye Ait Ürünler</a></td>
-                                    <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Kategoriyi Sil</a></td>
-                                    <td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-success">Güncelle</a></td>
+                                    <td>@item.NameSurname</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.Subject</td>
+                                    <td>@item.Message.Substring(0,30)</td>
+                                    <td>@(((DateTime)item.SendDate).ToString("dd.MM.yyyy"))</td>                                                                   
+                                    <td><a href="/Contact/DeleteContact/@item.ContactId" class="btn btn-danger">Sil</a></td>
+                                    <td><a href="/Contact/UpdateContact/@item.ContactId" class="btn btn-success">Oku</a></td>
                                 </tr>
                             }
                         </tbody>
                     </table>
                     <br />
-                    <a href="/Category/CreateCategory/" class="btn btn-primary">Yeni Kategori Girişi</a>
+                    <a href="/Contact/CreateContact/" class="btn btn-primary">Yeni Mesaj Girişi</a>
                 </div>
                 <div class="card-footer"></div>
             </div>
