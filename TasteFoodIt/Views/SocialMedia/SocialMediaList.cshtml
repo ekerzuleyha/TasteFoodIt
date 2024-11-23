@@ -29,7 +29,7 @@
                                 <th>Id</th>
                                 <th>Platform Adı</th>
                                 <th>Platform Adresi</th>
-                                <th>İkon</th>
+                                @*<th>İkon</th>*@
                                 <th>Durum</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
@@ -39,12 +39,27 @@
                             @foreach (var item in Model)
                             {
                                 count++;
+
+                                string renk = "";
+                                string durum ="";
+
+                                if (item.Status==true)
+                                {
+                                    durum = "Aktif";
+                                    renk = "badge bg-success";
+                                }
+                                else
+                                {
+                                    durum = "Pasif";
+                                    renk = "badge bg-danger";
+                                }
                                 <tr>
                                     <td>@count</td>
                                     <td>@item.PlatformName</td>
                                     <td>@item.RedirectUrl</td>
                                     @*<td>@item.IcanUrl</td>*@
-                                    <td>@item.Status</td>
+                                    @*<td>@item.Status</td>*@
+                                    <td><span class="@renk" style=" color: azure; font-size:larger">@durum</span></td>
 
                                     <td><a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaId" class="btn btn-danger">Sil</a></td>
                                     <td><a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaId" class="btn btn-success">Güncelle</a></td>

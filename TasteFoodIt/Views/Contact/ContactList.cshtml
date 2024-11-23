@@ -27,11 +27,11 @@
                         <thead class="thead-light">
                             <tr>
                                 <th>Id</th>
-                                <th>İsim Soyisim</th>
+                                <th>Gönderen</th>
                                 <th>Email</th>
-                                <th>Konu</th>
-                                <th>Mesaj</th>
+                                <th>Konu</th>                               
                                 <th>Gönderme Tarihi</th>
+                                <th>Durum</th>
                                 <th>Sil</th>
                                 <th>Mesaj İçeriği</th>
                             </tr>
@@ -40,21 +40,35 @@
                             @foreach (var item in Model)
                             {
                                 count++;
+                                string okunduBilgisi = "";
+                                string renk = "";
+
+                                if (item.IsRead == true)
+                                {
+                                    okunduBilgisi = "Okundu";
+                                    //renk = "alert-success";
+                                    renk = "badge bg-success";
+                                }
+                                else
+                                {
+                                    okunduBilgisi = "Okunmadı";
+                                    renk = "badge bg-danger";
+                                }
                                 <tr>
                                     <td>@count</td>
                                     <td>@item.NameSurname</td>
                                     <td>@item.Email</td>
                                     <td>@item.Subject</td>
-                                    <td>@item.Message.Substring(0,30)</td>
-                                    <td>@(((DateTime)item.SendDate).ToString("dd.MM.yyyy"))</td>                                                                   
-                                    <td><a href="/Contact/DeleteContact/@item.ContactId" class="btn btn-danger">Sil</a></td>
-                                    <td><a href="/Contact/UpdateContact/@item.ContactId" class="btn btn-success">Oku</a></td>
+                                    <td>@(((DateTime)item.SendDate).ToString("dd.MM.yyyy"))</td>
+                                    <td><span class="@renk" style=" color:azure;font-size:larger">@okunduBilgisi</span></td>
+                                    <td><a href="/Contact/DeleteMessage/@item.ContactId" class="btn btn-danger">Sil</a></td>
+                                    <td><a href="/Contact/ReadMessage/@item.ContactId" class="btn btn-success">Mesajı Aç</a></td>
                                 </tr>
                             }
                         </tbody>
                     </table>
                     <br />
-                    <a href="/Contact/CreateContact/" class="btn btn-primary">Yeni Mesaj Girişi</a>
+
                 </div>
                 <div class="card-footer"></div>
             </div>

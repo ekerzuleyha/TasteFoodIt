@@ -18,14 +18,34 @@ namespace TasteFoodIt.Controllers
             return View(values);
         }
 
-        //[HttpPost]
-        //public ActionResult SendMessage(Contact c)
-        //{
-        //    context.Contacts.Add(c);
-        //    c.SendDate=DateTime.Now;
-        //    c. = false;
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index", "Default");
-        //}
+        [HttpPost]
+        public ActionResult SendMessage(Contact c)
+        {
+            context.Contacts.Add(c);
+            c.SendDate = DateTime.Now;
+            c.IsRead = false;
+            context.SaveChanges();
+            return RedirectToAction("NavbarContact", "Default");
+        }
+
+        [HttpGet]
+        public ActionResult ReadMessage(int id)
+        {
+            var value = context.Contacts.Find(id);
+            value.IsRead = true;
+            context.SaveChanges();
+            return View(value);
+        }
+
+        public ActionResult DeleteMessage(int id)
+        {
+            var value = context.Contacts.Find(id);
+            context.Contacts.Remove(value);
+            context.SaveChanges();
+            return RedirectToAction("ContactList");
+        }
+
+
+
     }
 }

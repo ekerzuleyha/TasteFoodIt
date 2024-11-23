@@ -199,6 +199,10 @@
     <Compile Include="Migrations\202407251946560_mig9.designer.cs">
       <DependentUpon>202407251946560_mig9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411201913250_mig10.cs" />
+    <Compile Include="Migrations\202411201913250_mig10.designer.cs">
+      <DependentUpon>202411201913250_mig10.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -4981,6 +4985,7 @@
     <Content Include="Views\SocialMedia\CreateSocialMedia.cshtml" />
     <Content Include="Views\SocialMedia\UpdateSocialMedia.cshtml" />
     <Content Include="Views\Contact\ContactList.cshtml" />
+    <Content Include="Views\Contact\ReadMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5030,6 +5035,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202407251946560_mig9.resx">
       <DependentUpon>202407251946560_mig9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411201913250_mig10.resx">
+      <DependentUpon>202411201913250_mig10.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
