@@ -54,6 +54,7 @@ namespace TasteFoodIt.Controllers
             value.IsRead = true;
             context.SaveChanges();
             return RedirectToAction("CategoryList", "Category");
+      
         }
     }
 }
