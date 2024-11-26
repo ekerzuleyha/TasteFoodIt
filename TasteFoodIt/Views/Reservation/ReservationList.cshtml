@@ -1,0 +1,72 @@
+﻿@model List<TasteFoodIt.Entities.Reservation>
+@{
+    ViewBag.Title = "ReservationList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Rezervasyon Listesi</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Default/Index/">Ana Sayfa</a></li>
+            <li class="breadcrumb-item">Rezervasyonlar</li>
+            <li class="breadcrumb-item active" aria-current="page">Rezervasyon İşlemleri</li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 mb-4">
+            <!-- Simple Tables -->
+            <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Id</th>
+                                <th>İsim</th>
+                                <th>Email</th>
+                                <th>Telefon</th>
+                                <th>Tarih</th>
+                                <th>Saat</th>
+                                <th>Kişi Sayısı</th>
+                                <th>Durum</th>
+                                <th>Durum Seç</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    @*<td>@item.CategoryId</td>*@
+                                    <td>@count</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.Phone</td>
+                                    <td>@item.ReservationDate</td>
+                                    <td>@item.Time</td>
+                                    <td>@item.GuestCount</td>
+                                    <td>@item.ReservationStatus</td>
+                                    <td><a href="/Category/CategoryProducts/@item.ReservationId" class="btn btn-warning">Beklet</a><a href="/Category/DeleteCategory/@item.ReservationId" class="btn btn-danger">Onayla</a><a href="/Category/UpdateCategory/@item.ReservationId" class="btn btn-success">İptal Et</a></td>
+                                    <td><a href="/Category/DeleteCategory/@item.ReservationId" class="btn btn-danger">Sil</a></td>
+                                    <td><a href="/Category/UpdateCategory/@item.ReservationId" class="btn btn-success">Güncelle</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                    <a href="/Category/CreateCategory/" class="btn btn-primary">Yeni Rezervasyon Girişi</a>
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+    </div>
+    <!--Row-->
+</div>
+

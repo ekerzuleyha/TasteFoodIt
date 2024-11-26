@@ -1,4 +1,4 @@
-﻿
+﻿@model TasteFoodIt.Entities.Admin
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
@@ -10,22 +10,35 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/Default/Index/">Ana Sayfa</a></li>
             <li class="breadcrumb-item"><a href="/Product/ProductList/">Profilim</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Şifre Değiştir</li>
+            @*<li class="breadcrumb-item active" aria-current="page">Şifre Değiştir</li>*@
         </ol>
     </div>
 
     <div class="row">
         <div class="col-lg-12 mb-4">
-         
+
             <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 
                 </div>
-             <h3>Kullanıcı adınız:@ViewBag.v</h3>
+                @*<h3>Ad Soyad : @ViewBag.c</h3>
+                <h3>Kullanıcı Adınız:@ViewBag.v</h3>
+                <h3><img src="@ViewBag.x" width="75px" height="75px" /></h3>*@
+            <div class="container">
+                @Html.HiddenFor(x => x.AdminId)
+                <label><h3>İsim Soyisim : @ViewBag.c</h3></label>
+                <br />
+                <label><h3>Kullanıcı Adı : @ViewBag.v</h3></label>
+                <br />
+                <img src="@ViewBag.x" width="75px" height="75px" alt="deneme"/>
+                
+                <br />
+
+            </div>
                 <div class="card-footer"></div>
             </div>
         </div>
     </div>
-  
+
 </div>
 

@@ -143,6 +143,7 @@
     <Compile Include="Controllers\OpenDayHourController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\SliderController.cs" />
     <Compile Include="Controllers\SocialMediaController.cs" />
     <Compile Include="Controllers\TestimonialController.cs" />
@@ -203,6 +204,14 @@
     <Compile Include="Migrations\202411201913250_mig10.designer.cs">
       <DependentUpon>202411201913250_mig10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411252126425_mig11.cs" />
+    <Compile Include="Migrations\202411252126425_mig11.designer.cs">
+      <DependentUpon>202411252126425_mig11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411252141470_mig12.cs" />
+    <Compile Include="Migrations\202411252141470_mig12.designer.cs">
+      <DependentUpon>202411252141470_mig12.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -228,6 +237,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Templates\a.jpg" />
     <Content Include="Templates\colorlib-error-404-4\css\style.css" />
     <Content Include="Templates\colorlib-error-404-4\index.html" />
     <Content Include="Templates\colorlib-error-404-4\readme.txt" />
@@ -4986,6 +4996,8 @@
     <Content Include="Views\SocialMedia\UpdateSocialMedia.cshtml" />
     <Content Include="Views\Contact\ContactList.cshtml" />
     <Content Include="Views\Contact\ReadMessage.cshtml" />
+    <Content Include="Views\AdminLayout\PartialNavbarMessage.cshtml" />
+    <Content Include="Views\Reservation\ReservationList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5038,6 +5050,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411201913250_mig10.resx">
       <DependentUpon>202411201913250_mig10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411252126425_mig11.resx">
+      <DependentUpon>202411252126425_mig11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411252141470_mig12.resx">
+      <DependentUpon>202411252141470_mig12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

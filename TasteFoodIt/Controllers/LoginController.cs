@@ -31,6 +31,8 @@ namespace TasteFoodIt.Controllers
                 //çerez değeri oluşturup kullanıcının bilgilerini tutucaz. bizden kullanıcı adı istiyor ,bizde diyoruz ki values dan gelen kullanıcı adı kullanıcı adı olarak atansın,true diyerek bilgilerin kalıcı olarak kaydedilmesini
                 FormsAuthentication.SetAuthCookie(values.Username, true);
                 Session["a"] = values.Username;
+                Session["b"] = values.NameSurname;
+                Session["c"] = values.ImageUrl;
                 return RedirectToAction("ProductList","Product");
             }
 
