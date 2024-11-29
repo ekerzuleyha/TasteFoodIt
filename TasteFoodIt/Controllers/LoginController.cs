@@ -9,18 +9,19 @@ using System.Web.Security;
 
 namespace TasteFoodIt.Controllers
 {
+
     public class LoginController : Controller
     {
         TasteContext context = new TasteContext();
 
-
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
-
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Index(Admin p)
         {
@@ -33,10 +34,19 @@ namespace TasteFoodIt.Controllers
                 Session["a"] = values.Username;
                 Session["b"] = values.NameSurname;
                 Session["c"] = values.ImageUrl;
-                return RedirectToAction("ProductList","Product");
+                Session["d"] = values.Password;
+                //return RedirectToAction("ProductList","Product");
+                return RedirectToAction("Index","Profile");
             }
 
             return View();
+        }
+
+
+        public ActionResult Logut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index");
         }
     }
 }

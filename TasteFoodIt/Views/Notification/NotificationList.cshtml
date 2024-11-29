@@ -43,7 +43,7 @@
                                 <td>@count</td>
                                 <td>@item.Description</td>
                                 @*<td>@item.Date.ToShortDateString()  </td>*@
-                            <td>@(((DateTime)item.Date).ToString("MMMM,dd,yyyy")) </td>
+                            <td>@(((DateTime)item.Date).ToString("dd.MM.yyyy")) </td>
                                 @if (item.IsRead == true)
                                 {
                                     <td><a href="/Notification/NotificationIsReadChangeToFalse/@item.NotificationId" class="btn btn-dark">Okunmadı Olarak İşaretle</a></td>

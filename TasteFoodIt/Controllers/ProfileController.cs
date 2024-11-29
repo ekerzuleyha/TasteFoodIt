@@ -14,6 +14,7 @@ namespace TasteFoodIt.Controllers
             ViewBag.v = Session["a"];
             ViewBag.c = Session["b"];
             ViewBag.x = Session["c"];
+            ViewBag.p = Session["d"];
             return View();
         }
     }

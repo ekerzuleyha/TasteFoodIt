@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 1;
 }
 
 <div class="container-fluid" id="container-wrapper">
@@ -16,29 +17,45 @@
 
     <div class="row">
         <div class="col-lg-12 mb-4">
-
+            <!-- Simple Tables -->
             <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 
                 </div>
-                @*<h3>Ad Soyad : @ViewBag.c</h3>
-                <h3>Kullanıcı Adınız:@ViewBag.v</h3>
-                <h3><img src="@ViewBag.x" width="75px" height="75px" /></h3>*@
-            <div class="container">
-                @Html.HiddenFor(x => x.AdminId)
-                <label><h3>İsim Soyisim : @ViewBag.c</h3></label>
-                <br />
-                <label><h3>Kullanıcı Adı : @ViewBag.v</h3></label>
-                <br />
-                <img src="@ViewBag.x" width="75px" height="75px" alt="deneme"/>
-                
-                <br />
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Id</th>
+                                <th>İsim Soyisim</th>
+                                <th>Kullanıcı Adı</th>
+                                <th>Şifre</th>
+                                <th>Resim</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                              
+                                <tr>
 
-            </div>
+                                    <td>@count</td>
+                                    <td>@ViewBag.c</td>
+                                    <td>@ViewBag.v</td>
+                                    <td>@ViewBag.p</td>
+                                    <td><img src="@ViewBag.x" alt="admin" width="75px" height="75px" /></td>
+                                </tr>
+                            
+                        </tbody>
+                    </table>
+                    <br />
+                    
+                </div>
                 <div class="card-footer"></div>
             </div>
         </div>
     </div>
+
+   
 
 </div>
 

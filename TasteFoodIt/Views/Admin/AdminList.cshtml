@@ -1,17 +1,17 @@
-﻿@model List<TasteFoodIt.Entities.Chef>
+﻿@model List<TasteFoodIt.Entities.Admin>
 @{
-    ViewBag.Title = "ChefList";
+    ViewBag.Title = "AdminList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
 
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Şef Listesi</h1>
+        <h1 class="h3 mb-0 text-gray-800"> Admin Listesi</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/Default/Index/">Ana Sayfa</a></li>
-            <li class="breadcrumb-item">Şefler</li>
-            <li class="breadcrumb-item active" aria-current="page">Şef İşlemleri</li>
+            <li class="breadcrumb-item">Adminler</li>
+            <li class="breadcrumb-item active" aria-current="page">Admin İşlemleri</li>
         </ol>
     </div>
 
@@ -28,9 +28,9 @@
                             <tr>
                                 <th>Id</th>
                                 <th>İsim Soyisim</th>
-                                <th>Ünvan</th>
-                                <th>Açıklama</th>
-                                <th>Fotoğraf</th>
+                                <th>Kullanıcı Adı</th>
+                                <th>Şifre</th>
+                                <th>Resim</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
                             </tr>
@@ -40,21 +40,20 @@
                             {
                                 count++;
                                 <tr>
+                                   
                                     <td>@count</td>
                                     <td>@item.NameSurname</td>
-                                    <td>@item.Title</td>
-                                    <td>@item.Description</td>
-                                    <td><img src="@item.ImageUrl" alt="@item.ImageUrl" height="75px" width="75px"/></td>
-
-                                    <td><a href="/Chef/DeleteChef/@item.ChefId" class="btn btn-danger">Sil</a></td>
-                                    <td><a href="/Chef/UpdateChef/@item.ChefId" class="btn btn-success">Güncelle</a></td>
+                                    <td>@item.Username</td>
+                                    <td>@item.Password</td>
+                                    <td><img src="@item.ImageUrl" alt="admin" width="75px" height="75px"/></td>
+                                    <td><a href="/Admin/DeleteAdmin/@item.AdminId" class="btn btn-danger">Sil</a></td>
+                                    <td><a href="/Admin/UpdateAdmin/@item.AdminId" class="btn btn-success">Güncelle</a></td>
                                 </tr>
                             }
                         </tbody>
                     </table>
                     <br />
-
-                    <a href="/Chef/CreateChef/" class="btn btn-primary" id="deneme">Yeni Şef Girişi</a>
+                    <a href="/Admin/CreateAdmin/" class="btn btn-primary">Yeni Admin Girişi</a>
                 </div>
                 <div class="card-footer"></div>
             </div>

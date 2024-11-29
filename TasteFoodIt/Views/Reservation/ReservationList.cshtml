@@ -9,7 +9,9 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Rezervasyon Listesi</h1>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/Default/Index/">Ana Sayfa</a></li>
+            <li class="breadcrumb-item">
+                <a href="/Default/Index/">Ana Sayfa</a>
+            </li>
             <li class="breadcrumb-item">Rezervasyonlar</li>
             <li class="breadcrumb-item active" aria-current="page">Rezervasyon İşlemleri</li>
         </ol>
@@ -43,25 +45,60 @@
                             @foreach (var item in Model)
                             {
                                 count++;
+                                string deger = "";
+                                string gorunum = "";
                                 <tr>
                                     @*<td>@item.CategoryId</td>*@
                                     <td>@count</td>
                                     <td>@item.Name</td>
                                     <td>@item.Email</td>
                                     <td>@item.Phone</td>
-                                    <td>@item.ReservationDate</td>
+                                    @*<td>@item.ReservationDate</td>*@
+                                    <td>@(((DateTime)item.ReservationDate).ToString("d"))</td>
                                     <td>@item.Time</td>
+
                                     <td>@item.GuestCount</td>
-                                    <td>@item.ReservationStatus</td>
-                                    <td><a href="/Category/CategoryProducts/@item.ReservationId" class="btn btn-warning">Beklet</a><a href="/Category/DeleteCategory/@item.ReservationId" class="btn btn-danger">Onayla</a><a href="/Category/UpdateCategory/@item.ReservationId" class="btn btn-success">İptal Et</a></td>
-                                    <td><a href="/Category/DeleteCategory/@item.ReservationId" class="btn btn-danger">Sil</a></td>
-                                    <td><a href="/Category/UpdateCategory/@item.ReservationId" class="btn btn-success">Güncelle</a></td>
+
+
+                                    @if (item.ReservationStatus == "Onaylandı")
+                                    {
+                                        deger = "Onaylandı";
+                                        gorunum = "bg-success";
+                                    }
+                                    else if (item.ReservationStatus == "İptal Edildi")
+                                    {
+                                        deger = "İptal Edildi";
+                                        gorunum = "bg-danger";
+                                    }
+                                    else if (item.ReservationStatus == "Beklemede")
+                                    {
+                                        deger = "Beklemede";
+                                        gorunum = "bg-warning";
+                                    }
+                                    else
+                                    {
+                                        deger = "";
+                                    }
+                                    <td>
+                                        <span class="badge @gorunum" style="color:azure  ; font-size:15px">@deger</span>
+                                    </td>
+
+                                    <td>
+                                        <a href="/Reservation/RezervationStatusBeklet/@item.ReservationId" class="btn btn-outline-warning">Beklet</a>
+                                        <a href="/Reservation/RezervationStatusOnayla/@item.ReservationId" class="btn btn-outline-success">Onayla</a>
+                                        <a href="/Reservation/RezervationStatusIptalEt/@item.ReservationId" class="btn btn-outline-danger">İptal Et</a>
+                                    </td>
+                                    <td>
+                                        <a href="/Reservation/DeleteReservation/@item.ReservationId" class="btn btn-danger">Sil</a>
+                                    </td>
+                                    <td>
+                                        <a href="/Reservation/UpdateReservation/@item.ReservationId" class="btn btn-success">Güncelle</a>
+                                    </td>
                                 </tr>
                             }
                         </tbody>
                     </table>
                     <br />
-                    <a href="/Category/CreateCategory/" class="btn btn-primary">Yeni Rezervasyon Girişi</a>
                 </div>
                 <div class="card-footer"></div>
             </div>

@@ -126,6 +126,8 @@ namespace TasteFoodIt.Controllers
 
         public ActionResult NavbarReservation()
         {
+            //var values = context.Reservations.ToList();
+            //return View(values);
             return View();
         }
 
